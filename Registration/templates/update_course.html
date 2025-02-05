@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>KOLEJ PROFESSIONAL MARA</h1>
+    <h2>UPDATE COURSE</h2>
+
+    <form action="save_update_course/{{data.code}}" method="post">
+        {% csrf_token %}
+            Course Code : <input type="text" name="code" value="{{data.code}}" disabled="false"> <br>
+            Course Description : <input type="text" name="description" value="{{data.description}}"> <br>
+            <input type="submit" value="SAVE">
+    </form>
+    <table>
+        <tr>
+            <th>CODE</th>
+            <th>DESCRIPTION</th>
+            <th>UPDATE?</th>
+        </tr>
+        {% for x in allcourse %}
+            <tr>
+                <td>{{x.code}}</td>
+                <td>{{x.description}}</td>
+                <td><a href="update_course/{{data.code}}">Update</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    <a href="{% url 'index' %}")>
+        <button>HOMEPAGE</button>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Kolej Professional MARA Indera Mahkota</h1>
+        <h2>MENTOR</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            Mentor ID: <input type="text" name="MID"><br><br>
+            Mentor Name: <input type="text" name="MNAME"><br><br>
+            Mentor Email: <input type="text" name="MEMAIL"><br><br>
+            <input type="submit" value="SAVE"><br><br>
+        </form>
+        {{ message }}
+    <br><br>
+        <table border="1">
+            <th>mentorCd</th><th>mentorName</th><th>mentorEmail</th>
+
+        {% for x in allmentor %}
+        <tr>
+            <td>{{ x.mentorCd }} </td>
+            <td>{{ x.mentorName }} </td>
+            <td>{{ x.mentorEmail }} </td>
+
+        </tr>
+        {% endfor %}
+        </table>
+    <a href="{% url 'index' %}">Homepage</a>
+
+    </body>
+</html>

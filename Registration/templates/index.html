@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>KOLEJ PROFESSIONAL MARA INDERA MAHKOTA</h1></center>
+    {% with firstname="Imran" mothersname="Siti"%}
+        <h1>Hello {{firstname}}, How are you?</h1>
+    {% endwith %}
+
+    <ul>
+        <li><a href="{% url 'course' %}">Course Site</a></li>
+        <li><a href="{% url 'mentor' %}">Mentor Site</a></li>
+        <li><a href="{% url 'search' %}">Search Site</a></li>
+        <li><a href="{% url 'search_mentor' %}">Search Mentor Site</a></li>
+    </ul>
+</body>
+</html>
